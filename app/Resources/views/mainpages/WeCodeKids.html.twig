@@ -1,0 +1,363 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <div id="video" class="container">
+
+        <div class="row">
+
+            <div class="col-sm-2"></div>
+
+
+            <div class="col-sm-8">
+                <div class="page-header">
+                    <h1>We Code Kids</h1>
+                </div>
+
+
+                <div class="embed-responsive embed-responsive-4by3">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QFdFYXbkh8M"></iframe>
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-2"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container" style="padding-top:20px;padding-bottom: 10%">
+
+        <div class="row">
+
+            <div class="col-sm-2"></div>
+
+
+            <div class="col-sm-8">
+
+                <div>
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                                  data-toggle="tab">Home</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Comment</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="home" style="line-height: 30px;"></br>
+                            Imagine Germany with a coding generation? Kids using core analytical skills to solve
+                            problems build startup companies. The future depends on the young people of today, and it is
+                            important that we develop this talent while it is young to ensure that we do not lose it
+                            later. We have a solution that can effectively address and radically change the current
+                            education system through enabling our students to become part of a local campaign that will
+                            see them being able to compete with the best of the best around the world.
+                            In today’s digital world, coding is a fundamental skill alongside math and reading, but too
+                            few kids have the opportunity to learn to program because it is rarely taught in
+                            school.</br>
+                            <strong><h1>Why Computer Science?</h1></strong></br>
+                            Software is becoming a critical need of all our lives. It is the language of our world.
+                            This year, almost 200 million students around the world were exposed to coding through the
+                            Hour of Code event. And over 90% of parents want programming added to their child’s
+                            curriculum.
+                            We are seeking to apply the we code kids program in schools to create a fun and engaging
+                            where children not only learn to program, but also have opportunities to be creative using
+                            code.</br>
+
+
+                            <canvas id="myChart"
+                                    style="max-height:400px; max-width:400px; margin-left:20%; font-family: 'Menlo', 'Monaco', monospace"></canvas>
+
+                            <script>
+                                var ctx = document.getElementById("myChart").getContext("2d");
+                                ctx.canvas.width = 50;
+                                ctx.canvas.height = 50;
+
+                                var myChart = new Chart(ctx, {
+                                    type: 'pie',
+                                    data: {
+                                        labels: [
+                                            "Parents want programming curriculum",
+                                            "Others opinion"
+
+                                        ],
+                                        datasets: [
+                                            {
+                                                data: [90, 10],
+                                                backgroundColor: [
+                                                    "#373940",
+                                                    "#18bc9c"
+
+                                                ],
+                                                hoverBackgroundColor: [
+                                                    "#373940",
+                                                    "#18bc9c"
+
+                                                ]
+                                            }]
+                                    }
+                                });
+                            </script>
+
+                            </br>
+                            <strong><h1>Objective:</h1></strong>
+                            <ul>
+
+                                <li>Raise awareness about coding and bring coding into hundreds of schools .
+                                </li>
+                                <li>Empowering kids and gives them tools to express themselves in really cool way</li>
+                                <li>Increase the number of programmers , over the next years</li>
+                                <li>programming will be one of the fastest growing occupations Helping kids to thinks
+                                    better, and create a best way of thinking about things in all domain .
+                                </li>
+
+                            </ul>
+
+                            <strong><h1>Direct Goals:</h1></strong>
+                            <ul>
+
+                                <li>100 schools participate in the WeCode kids program during 5 years</li>
+                                <li>2500 students</li>
+                                <li>4500 training hours</li>
+
+
+                            </ul>
+
+
+                            <strong><h1>Project Curriculum : </h1></strong>
+                            <ul>
+
+                                <li><strong>Unplugged Games:</strong> teach programming concepts without a computer</li>
+                                <li><strong>Scratch Jr:</strong> Drag-and-drop platforms such as Scratch Jr. allow kids
+                                    as young as 5 create scenes where characters jump, dance, sing and move around. It's
+                                    not Call of Duty, but it's a start.
+                                </li>
+                                <li><strong>App Inventor:</strong> Speaking of apps, MIT and Google Labs has created a
+                                    platform called App Inventor which focuses specifically on mobile programming. If
+                                    your son or daughter does manage to create the next Angry Birds, think of all the
+                                    fun you can have with their college fund.
+                                </li>
+                                <li><strong>Hour of Code:</strong>The mission of Code.org is to get those from "4 to
+                                    104" to sit down for 60 minutes and make something.
+                                </li>
+
+
+                            </ul>
+
+                            <strong><h1>Project Outcomes : </h1></strong>
+                            <ul>
+
+                                <li>kids are being encouraged to learn.</li>
+                                <li>prepare them to learn to code at a young age</li>
+                                <li>Learning through play is the way to go.</li>
+                                <li>Improve logic skills.</li>
+                                <li>Ingrain important thinking skills into kids.</li>
+
+
+                            </ul>
+
+                            <span class="label label-default" style="font-size: small"> You can view our program's Curriculum by clicking <a
+                                        href="{{ asset('Uploads/Curriculum.pdf') }}">here </a> </span></br>
+                            <a href="{{ path('apply_code') }}" class="btn btn-danger">Apply Here for your school</a>
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="profile"></br>
+
+                            <div id="Comments" style="padding-top: 30px">
+                            </div>
+
+                            {{ form_start(CommentForm,{'attr':{'id': 'CommentForm','class':'form-group-sm'}}) }}
+                            <div class="form-group">
+
+                                {{ form_row(CommentForm.email,{'id': 'email'}) }}
+                            </div>
+
+                            <div class="form-group">
+
+                                {{ form_row(CommentForm.message) }}
+                            </div>
+
+
+                            <button type="submit" class="btn btn-sm btn-danger" formnovalidate>Comment</button>
+                            {{ form_end(CommentForm) }}
+
+
+                            </br>
+                            <div id="loader" hidden><img src="{{ asset('image/Loading_icon.gif') }}" width="120px"
+                                                         height="79px" border="0px"></div>
+
+                            <div id="feedback"></div>
+
+
+
+
+                            <script type="text/javascript">
+
+                                $(document).ready(function () {
+
+                                    $("#CommentForm").bootstrapValidator({
+
+                                        message: "this value is not valid",
+                                        feedbackIcons: {
+
+                                            invalid: 'glyphicon glyphicon-remove',
+
+                                        },
+                                        submitHandler: function (validator, form, submitButton) {
+
+
+                                            var data = $('#CommentForm').serializeArray();
+
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "{{ path('save_comment') }}",
+                                                data: data,
+                                                dataType: "json",
+                                                beforeSend: function () {
+                                                    $('#loader').show();
+                                                },
+                                                complete: function () {
+                                                    $('#loader').hide();
+                                                },
+                                                success: function (response) {
+
+                                                    $('#CommentForm').trigger("reset");
+                                                    $('#feedback').html('');
+                                                    if (response["status"] == '1') {
+
+
+                                                        $('#feedback').html('<div class="alert alert-success" role="alert">' + response['message'] + '</div>');
+                                                        $('#Comments').load();
+
+                                                    }
+
+
+                                                },
+                                                error: function (response) {
+                                                    $('#CommentForm').trigger("reset");
+
+                                                    $('#feedback').html('');
+                                                    $('#feedback').html('<div class="alert alert-danger" role="alert">' + response['failed'] + '</div>');
+                                                }
+                                            });
+
+
+                                        },
+                                        fields: {
+
+                                            'email': {
+
+                                                validators: {
+
+                                                    notEmpty: {
+
+                                                        message: 'Email is Required'
+                                                    },
+                                                    emailAddress: {
+
+                                                        message: "The Email is not Valid"
+                                                    }
+                                                }
+                                            },
+                                            'message': {
+
+                                                validators: {
+
+                                                    notEmpty: {
+
+                                                        message: 'Email is Required'
+                                                    }
+                                                }
+                                            }
+
+
+                                        }
+
+                                    });
+
+
+                                });
+
+
+                            </script>
+                            <script>
+
+                                $(function () {
+
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "{{ path('get_comments') }}",
+                                        success: function (comments) {
+                                            $.each(comments, function (i, comments) {
+
+                                                console.log(comments['date']);
+
+                                                $('#Comments').append(
+                                                        '<div class="media"> <div class="media-left media-middle"> <img class="media-object" src="{{ asset('image/Anonymous_User.jpg') }}"  width="50" height="50"> </div> <div class="media-body"> <h4 class="media-heading">' + comments['email'] + '</h4><p class="text-muted">'+comments['date']+'</p>' + comments['comment'] + '</div></div>'
+                                                );
+
+
+                                            });
+                                        }
+
+
+                                    });
+
+                                });
+                            </script>
+
+                            <script type="text/javascript">
+
+                                $(document).ready(function () {
+
+                                    $("#Comments").load(function () {
+
+
+                                        $.ajax({
+                                            type: "GET",
+                                            url: "{{ path('get_comments') }}",
+                                            success: function (comments) {
+                                                $('#Comments').html('');
+                                                $.each(comments, function (i, comments) {
+
+
+                                                    $('#Comments').append(
+                                                            '<div class="media"> <div class="media-left media-middle"> <img class="media-object" src="{{ asset('image/Anonymous_User.jpg') }}"  width="50" height="50"> </div> <div class="media-body"> <h4 class="media-heading">' + comments['email'] + '</h4><p class="text-muted">'+comments['date']+'</p>' + comments['comment'] + '</div></div>'
+                                                    );
+
+
+                                                });
+                                            }
+
+
+                                        });
+                                    });
+                                });
+
+                            </script>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-2"></div>
+
+        </div>
+
+    </div>
+
+
+{% endblock body %}

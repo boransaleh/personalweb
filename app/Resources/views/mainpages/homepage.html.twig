@@ -1,0 +1,296 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container-fluid" style="padding-left: 0px;padding-right: 0px;padding-bottom: 10px">
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel col-offset"  >
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="{{ asset('image/1.jpg') }}" alt="..." >
+
+                <div class="carousel-caption">
+                    <h1>“Everyone should learn how to program a computer, because it teaches you how to think.”</h1>
+                    <p><a class="btn btn-danger btn-lg" href="{{ path('we_code') }}" role="button">We Code Kids</a></p>
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="{{ asset('image/2.jpg') }}" alt="...">
+
+                <div class="carousel-caption">
+                    <h1>“Everyone should learn how to program a computer, because it teaches you how to think.”</h1>
+                    <p><a class="btn btn-danger btn-lg" href="{{ path('we_code') }}" role="button">We Code Kids</a></p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+        <hr>
+    </div>
+    <!-- Carousel -->
+
+</div>
+
+<section id="Aboutme">
+
+    <div id="about" class="container" style="padding-bottom: 10px;">
+        <div class="row">
+            <div class="col-sm-2 col-md-2">
+                <img src="image/personal.jpg"
+                     alt="" class="img-rounded img-responsive"/>
+            </div>
+            <div class="col-sm-10 col-md-10">
+                <blockquote>
+                    <h1>My Bio</h1>
+                    I have a BA Degree in Computer Information System in 2010 from An-Najah University. I have 5 years’
+                    experience of working in Information Technology field, including Web development, Servers
+                    Administration, websites content management, social media, and systems administration, i have been
+                    participated as a mentor at <a href="http://2015.seedstarsworld.com/event/seedstars-ramallah-2015/"><u>the global startup competition – Seedstars</u></a>, also I have a highly
+                    creative achiever with experience in managing diverse areas, ranging from IT to event management. I
+                    have solely handled the entire IT department in my line of work as well as being active in all
+                    other areas including operations and marketing.</blockquote>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<section id="myskills">
+
+<div class="container" style="padding-bottom: 10px;">
+    <hr class="divider">
+    <h1>My Skills</h1></br>
+    <div class="progress">
+        <div class="progress-bar progress-bar-skill3  progress-bar-striped active" role="progressbar" aria-valuenow="40"
+             aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+            <h5>Back-end Development( PHP , MySQL , Symfony3 , Python ) </h5>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-skill1  progress-bar-striped active" role="progressbar" aria-valuenow="20"
+             aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+            <h5>Front-end Development(Twitter Bootstrap3 ,HTML5 , CSS , JQuery) </h5>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-skill3  progress-bar-striped active" role="progressbar" aria-valuenow="60"
+             aria-valuemin="0" aria-valuemax="100" style="width: 99%">
+
+            <h5> Time management and Teamwork skills</h5>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-skill1  progress-bar-striped active" role="progressbar" aria-valuenow="80"
+             aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+            <h5> Communication Skills</h5>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-skill3  progress-bar-striped active" role="progressbar" aria-valuenow="80"
+             aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+            <h5>Project Management   Entrepreneurship skills</h5>
+        </div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-skill1  progress-bar-striped active" role="progressbar" aria-valuenow="80"
+             aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+            <h5> MS Office</h5>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<section id="services">
+
+
+<div class="container" style="padding-bottom: 10px;">
+    <hr class="divider">
+
+    <div class="jumbotron">
+        <h3><span class="glyphicon glyphicon-screenshot
+
+
+" aria-hidden="true"></span> We Code Kids </h3>
+
+        <p> Imagine Germany with a coding generation? Kids using core analytical skills to solve problems build startup companies. The future depends on the young people of today, and it is important that we develop this talent while it is young to ensure that we do not lose it later. We have a solution that can effectively address and radically change the current education system through enabling our students to become part of a local campaign that will see them being able to compete with the best of the best around the world. In today’s digital world, coding is a fundamental skill alongside math and reading, but too few kids have the opportunity to learn to program because it is rarely taught in school.
+
+        </p>
+
+        <p><a class="btn btn-danger btn-lg" href="{{ path("we_code") }}" role="button">Read More</a></p>
+    </div>
+</div>
+
+</section>
+
+
+
+
+<section id="contact">
+
+
+<div class="container" style="padding-bottom: 200px;">
+    <hr class="divider">
+    <h1>Contact</h1></br>
+
+    <div class="row">
+        <div class="col-lg-7">
+           {{ form_start(ContactForm,{'attr':{'id': 'defaultForm'}}) }}
+                <div class="form-group">
+
+                    {{ form_row(ContactForm.email,{'id': 'email'}) }}
+                </div>
+                <div class="form-group">
+
+                    {{ form_row(ContactForm.subject) }}
+                </div>
+                <div class="form-group">
+
+                    {{ form_row(ContactForm.message) }}
+                </div>
+
+
+                <button type="submit" class="btn btn-lg btn-danger" formnovalidate >Send</button>
+            {{ form_end(ContactForm) }}
+
+
+            </br>
+
+            <div  id="feedback"></div>
+
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#defaultForm').bootstrapValidator({
+                    message: 'This value is not valid',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    submitHandler: function(validator, form, submitButton) {
+
+
+
+                        var data= $('#defaultForm').serializeArray();
+
+
+                        $.ajax({
+                            type: "POST",
+                            url: "{{ path('success_page') }}",
+                            data:data ,
+                            dataType: "json",
+                            success: function(response) {
+                                $('#defaultForm').trigger("reset");
+                                $('#feedback').html('');
+                                $('#feedback').html('<div class="alert alert-success" role="alert">'+response["success"]+'</div>');
+                            },
+                            error: function(response){
+                                $('#feedback').html('');
+                                $('#feedback').html('<div class="alert alert-danger" role="alert">'+response["failed"]+'</div>');
+                            }
+                        });
+
+
+
+
+
+                    },
+                    fields: {
+
+                    email: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'The email address is required and can\'t be empty!'
+                                },
+                                emailAddress: {
+                                    message: 'The input is not a valid email address!'
+                                }
+                            }
+                        },
+                        subject:{
+                            validators:{
+
+                                notEmpty:{
+
+                                    message:'Please write your Subject!'
+                                },
+                                stringLength:{
+
+                                    min:3,
+                                    message:'your subject should be minimum 3 characters!!!  '
+                                }
+
+                            }
+                        },
+
+                        message:{
+
+                            validators:{
+
+                                notEmpty:{
+
+                                    message:'please write your Email!!'
+                                }
+                            }
+                        }
+
+
+                    }
+                });
+
+            });
+        </script>
+
+        <div id="contact" class="col-lg-5">
+            <blockquote>
+                <address>
+                    <p><span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span> Developed and Designed by <a
+                            href="mailto:webmaster@example.com">Baran Saleh</a>.</p>
+
+                    <p><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> 015145011767 <br>
+
+                    <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> 53347 Alfter,
+                        Germany.<br>
+
+
+                </address>
+                <p>
+                    <a href="https://www.facebook.com/Bor.Sal"><i id="social-fb" class="fa fa-facebook-square fa-3x "></i></a>
+                    <a href="https://twitter.com/Boran_Saleh"><i id="social-tw"
+                                                               class="fa fa-twitter-square fa-3x "></i></a>
+                    <a href="https://plus.google.com/u/0/117529344489529382663"><i id="social-gp"
+                                                                         class="fa fa-google-plus-square fa-3x "></i></a>
+            <a href="mailto:boran.alsaleh@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x "></i></a>
+            </p>
+
+            </blockquote>
+
+        </div>
+
+    </div>
+
+
+</div>
+</section>
+
+{% endblock %}

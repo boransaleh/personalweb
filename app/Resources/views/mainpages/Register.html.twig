@@ -1,0 +1,222 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="container" style="padding-top: 72px;">
+    <div class="jumbotron">
+
+        <div class="row">
+
+            <div class="col-lg-7" >
+
+                <h3>Sign Up Here </h3></br>
+
+
+
+                {{ form_start(RegisterationForm,{'attr':{'id': 'registerform','class':'form-group-lg'}}) }}
+
+
+
+
+                <div class="form-group ">
+
+                    {{ form_row(RegisterationForm.name) }}
+                </div>
+
+
+
+                <div class="form-group ">
+
+                    {{ form_row(RegisterationForm.email) }}
+                </div>
+
+
+                    <div class="form-group ">
+
+                        {{ form_row(RegisterationForm.plainPassword.first,{
+
+                            'label':'Password',
+                            'attr':{'id':'password','class':'form-control','placeholder':'New Password'}
+                        }) }}
+                    </div>
+                    <div class="progress" style="height: 2px">
+                        <div class="progress-bar progress-bar-warning" id="passwordChecker" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group ">
+
+                        {{ form_row(RegisterationForm.plainPassword.second,{
+
+                            'label':'Confirm Password',
+                            'attr':{'id':'cpassword','class':'form-control','placeholder':'Confirm Password'}
+                        }) }}
+                    </div>
+
+
+                <div class="form-group ">
+                    <div class="form-check">
+
+
+                            {{ form_label(RegisterationForm.terms, 'you must read and agree to our terms and conditions'|raw, {
+                                'label_attr': {'class': 'form-check-label'}
+                            }) }}
+
+                            {{ form_row(RegisterationForm.terms) }}
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="form-group ">
+
+                    <button type="submit" class="btn btn-danger " formnovalidate>Register</button>
+
+                </div>
+                {{ form_end(RegisterationForm) }}
+
+
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#registerform').bootstrapValidator({
+                            message: 'This value is not valid',
+                            feedbackIcons: {
+
+                                valid: 'glyphicon glyphicon-ok',
+                                invalid: 'glyphicon glyphicon-remove',
+                                validating: 'glyphicon glyphicon-refresh'
+
+
+                            },
+
+                            fields: {
+
+                                'registration_form[name]':{
+
+                                    validators:{
+
+                                        notEmpty:{
+
+                                            message:"your Name is required "
+                                        }
+
+                                    }
+                                },
+
+                                'registration_form[email]':{
+
+                                    validators:{
+
+                                        notEmpty:{
+
+                                            message:"Email Address Is Required"
+                                        },
+                                        emailAddress:{
+
+                                            message:"Email Address Is Not Valid"
+
+
+                                        }
+                                    }
+                                },
+
+                                'registration_form[plainPassword][first]':{
+
+                                    validators:{
+
+                                        notEmpty:{
+
+                                            message:"Password Is Required"
+                                        },
+
+                                        stringLength :{
+
+                                            min:6,
+                                            message:'Your password is not valid '
+                                        }
+
+                                    }
+                                },
+
+                                'registration_form[plainPassword][second]':{
+
+                                    validators:{
+
+                                        notEmpty:{
+                                            message:"Please Confirm Your Password"
+                                        },
+                                        identical:{
+
+                                            field:"registration_form[plainPassword][first]",
+                                            message:"please enter the same password"
+                                        }
+                                    }
+                                },
+
+                                terms:{
+
+                                    validators:{
+
+                                        choice:{
+
+                                            min:1,
+                                            message:"you should agree :( !!"
+
+
+                                        }
+                                    }
+                                }
+
+
+
+                            }
+
+
+
+
+                        });
+                    });
+
+
+
+
+
+                </script>
+
+
+            </div>
+            <div class="col-sm-5 " style="padding-bottom:30%">
+
+
+
+                </br> </br> </br> </br>
+
+                <p align="center">
+
+                <h3> OR Login Using</h3></br>
+
+                <a href="{{ path('connect_facebook') }}" style="color: #3b5998;"><i id="social-fb" class="fa fa-facebook-square fa-4x "></i></a>&nbsp;&nbsp;&nbsp;
+
+
+
+                <a href="{{ path('twitter_uri') }}" style="color: #62a9e0" ><i id="social-tw" class="fa fa-twitter-square fa-4x"></i> </a>
+
+
+                </p>
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}

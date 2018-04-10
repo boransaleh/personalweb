@@ -1,0 +1,239 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="container" style="padding-top: 72px;" xmlns="http://www.w3.org/1999/html"
+     xmlns="http://www.w3.org/1999/html">
+    <div class="jumbotron">
+
+        <div class="row">
+
+            <div class="col-lg-6" >
+
+                <h3>Start Here </h3></br>
+                <a class="text-muted" href="#" id="loginclick">login // </a><a id="passwordclick"  class="text-muted" href="#" >Forgot your password? </a>
+                </br></br>
+
+
+
+
+                    {{ form_start(form,{'attr':{'id': 'login_form','class':'form-group-lg'}}) }}
+
+                    <div class="form-group ">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans }}</div>
+                        {% endif %}
+
+                        {{ form_row(form._username) }}
+                    </div>
+
+                    <div class="form-group ">
+
+
+                        {{ form_row(form._password) }}
+
+                    </div>
+
+                    <div class="form-group ">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="_remember_me"> Remember me
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group ">
+
+                        <button type="submit" class="btn btn-danger" formnovalidate>Login</button>
+
+
+                    </div>
+
+
+                {{ form_end(form) }}
+
+
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#login_form').bootstrapValidator({
+                            message: 'This value is not valid',
+                            feedbackIcons: {
+
+                                invalid: 'glyphicon glyphicon-remove',
+
+                            },
+
+                            fields: {
+
+                                'login_form[_username]':{
+
+                                    validators:{
+
+                                        notEmpty:{
+
+                                            message:"User Name  is required "
+                                        },
+                                        emailAddress:{
+
+                                            message :"Username Is not valid"
+                                        }
+                                    }
+                                },
+
+                                'login_form[_password]': {
+
+                                    validators:{
+
+                                        notEmpty:{
+
+                                            message:"Password is Required"
+                                        },
+                                        stringLength :{
+
+                                            min:6,
+                                            message:'Your password is not valid '
+                                        }
+                                    }
+                                }
+
+
+                            }
+
+
+
+
+                        });
+                    });
+
+
+
+
+
+                </script>
+
+
+                {{ form_start(forgetPassword,{'attr':{'id': 'forgetpass','class':'form-group-lg','hidden':'true'}}) }}
+
+                    <div class="form-group ">
+                        {{ form_row(forgetPassword._username) }}
+                    </div>
+
+                    <div class="form-group ">
+
+                        <button type="submit" class="btn btn-danger">Send</button>
+                        </br></br>
+                        <div  id="feedback"></div>
+
+                    </div>
+                {{ form_end(forgetPassword) }}
+
+
+
+                <script type="text/javascript">
+
+                    $(document).ready(function(){
+
+                        $("#forgetpass").bootstrapValidator({
+
+                            message:"this value is not valid",
+                            feedbackIcons: {
+
+                                invalid: 'glyphicon glyphicon-remove',
+
+                            },
+                            submitHandler: function(validator, form, submitButton) {
+
+
+
+                                var data= $('#forgetpass').serializeArray();
+
+
+
+                                $.ajax({
+                                    type: "POST",
+                                    url: "{{ path('forget_password') }}",
+                                    data:data ,
+                                    dataType: "json",
+                                    success: function(response) {
+                                        $('#forgetpass').trigger("reset");
+                                        $('#feedback').html('');
+                                        if(response["status"]=='1'){
+
+                                            $('#feedback').html('<div class="alert alert-success" role="alert">'+response["message"]+'</div>');
+                                        }
+                                        else {
+
+                                            $('#feedback').html('<div class="alert alert-danger" role="alert">'+response["message"]+'</div>');
+                                        }
+
+
+                                    },
+                                    error: function(response){
+                                        $('#feedback').html('');
+                                        $('#feedback').html('<div class="alert alert-danger" role="alert">'+response["failure"]+'</div>');
+                                    }
+                                });
+
+
+
+
+
+                            },
+                            fields:{
+
+                                '_username':{
+
+                                    validators:{
+
+                                        notEmpty:{
+
+                                            message:'Email is Required'
+                                        },
+                                        emailAddress:{
+
+                                            message:"The Email is not Valid"
+                                        }
+                                    }
+                                }
+                            }
+
+                        });
+
+
+                    });
+
+
+                </script>
+
+
+            </div>
+            <div class="col-sm-6 ">
+
+
+
+             </br> </br> </br> </br>
+
+                    <p align="center">
+
+                    <h3> OR Login Using</h3></br>
+
+                        <a href="{{ path('connect_facebook') }}" style="color: #3b5998;"><i id="social-fb" class="fa fa-facebook-square fa-4x "></i></a>&nbsp;&nbsp;&nbsp;
+
+
+
+                        <a href="{{ path('twitter_uri') }}" style="color: #62a9e0" ><i id="social-tw" class="fa fa-twitter-square fa-4x"></i> </a>
+
+
+                    </p>
+                </br> </br> </br> </br>
+
+
+
+
+
+        </div>
+    </div>
+
+{% endblock %}
+

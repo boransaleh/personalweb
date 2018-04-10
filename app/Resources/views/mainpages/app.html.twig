@@ -1,0 +1,176 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <div class="container" style="padding-top: 72px;">
+    <div class="jumbotron">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="alert alert-success">Welcome {{ app.user.email }} </div>
+
+                <h3>Apply for We Code Kids </h3></br>
+
+
+                {{ form_start(applicationForm,{'attr':{'id': 'applicationForm','class':'form-group-lg'}}) }}
+
+
+
+
+
+
+                {{ form_row(applicationForm.SchoolName) }}
+
+
+
+
+                {{ form_row(applicationForm.StudentsNumber) }}
+
+
+
+
+
+
+                {{ form_row(applicationForm.ContactPerson) }}
+
+
+                <div class="input-group">
+
+                    {{ form_row(applicationForm.location) }}
+                    <span class="input-group-addon form-group-lg"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+</span>
+                </div>
+                </br>
+
+                {{ form_row(applicationForm.TelfoneNumber) }}
+
+
+
+
+                {{ form_row(applicationForm.Suggestion) }}
+
+
+
+
+
+
+
+              <div class="form-group">
+
+
+                <input id="uploadFile" placeholder="Choose File" class="form-control-static" size="30" disabled="disabled" />
+                <div class="fileUpload btn btn-primary">
+                    <span>Choose File </span>
+                    {{ form_row(applicationForm.File) }}
+
+                </div>
+                  </div>
+
+                <script>
+
+                    document.getElementById("app_form_File_file").onchange = function () {
+                        document.getElementById("uploadFile").value = this.value;
+                    };
+                </script>
+
+
+
+
+
+
+
+                <div class="form-group ">
+
+                    <button type="submit" class="btn btn-danger " formnovalidate>Apply</button>
+
+                </div>
+                {{ form_end(applicationForm) }}
+
+
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#applicationForm').bootstrapValidator({
+                            message: 'This value is not valid',
+                            feedbackIcons: {
+
+                                valid: 'glyphicon glyphicon-ok',
+                                invalid: 'glyphicon glyphicon-remove',
+                                validating: 'glyphicon glyphicon-refresh'
+
+
+                            },
+
+                            fields: {
+
+                                'app_form[SchoolName]': {
+
+                                    validators: {
+
+                                        notEmpty: {
+
+                                            message: "School Name is required "
+                                        }
+
+                                    }
+                                },
+
+                                'app_form[StudentsNumber]': {
+
+                                    validators: {
+
+                                        notEmpty: {
+
+                                            message: "You Should Determine the number of student who will participate in the program"
+                                        }
+                                    }
+                                },
+
+                                'app_form[ContactPerson]': {
+
+                                    validators: {
+
+                                        notEmpty: {
+
+                                            message: "You should fill the name of contact person"
+                                        },
+
+                                        stringLength: {
+
+                                            min: 4,
+                                            message: 'Your name is not valid '
+                                        }
+
+                                    }
+                                },
+
+
+                                'app_form[TelfoneNumber]': {
+
+                                        validators: {
+                                            phone: {
+                                                country: 'DE',
+                                                message: 'The value is not valid phone number'
+                                            }
+                                        }
+
+                                }
+
+
+                            }
+
+
+                        });
+                    });
+
+
+                </script>
+
+
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}

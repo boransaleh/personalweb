@@ -1,0 +1,253 @@
+
+body {
+  font-family: Ubuntu, sans-serif;
+  scrollbar-face-color:  #18bc9c;
+    text-align: justify;
+
+}
+
+
+
+
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+::-webkit-scrollbar-track {
+    background-color:  #969495;
+} /* the new scrollbar will have a flat appearance with the set background color */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+} /* this will style the thumb, ignoring the track */
+
+ /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+::-webkit-scrollbar-corner {
+    background-color: #969495;
+}
+
+#about.container {
+    padding-bottom: 30px;
+
+}
+
+#contact a {
+
+    color: #373940;
+}
+
+#contact a:hover {
+    color: #18bc9c;
+}
+
+.progress {
+    height: 45px;
+}
+
+.progress-bar > h5 {
+
+    padding-top: 5px;
+}
+
+.progress-bar-skill1 {
+    background-color: #373940;
+
+}
+
+.progress-bar-skill2 {
+    background-color: #969495;
+
+}
+
+.progress-bar-skill3 {
+    background-color: #18bc9c;
+
+}
+
+#footer.navbar-default {
+
+    min-height: 50px;
+    background-color: #969495;
+    color: rgba(24, 188, 156, 1);
+    font-size: 15px;
+}
+
+#footer-menu > li:before {
+    content: "•"; /* Insert content that looks like bullets */
+    padding-right: 8px;
+    color: #18bc9c; /* Or a color you prefer */
+}
+
+#footer-menu > li > a {
+    color: rgba(255, 255, 255, 1);
+    background-color: #373940;
+}
+
+#copy-right {
+
+    color: white;
+
+}
+
+.carousel {
+    height: 512px;
+    margin-bottom: 60px;
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+    height: 512px;
+
+    background-color: #777;
+}
+
+.carousel-inner > .item > img {
+    position:absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    width: auto;
+    height: 512px;
+    max-width:none;
+
+
+}
+
+.navbar-default {
+
+    min-height: 70px;
+
+}
+
+.navbar-default .container {
+
+    padding-top: 10px;
+
+}
+
+header .container-fluid {
+    padding-top: 72px;
+    padding-bottom: 50px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar-default .navbar-brand {
+    color: #FFFFFF;
+
+    font-size: 28px;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #18bc9c;
+
+}
+
+.navbar-default {
+    font-size: 19px;
+    background-color: #373940;
+    border-width: 0px;
+    border-radius: 0px;
+}
+
+.navbar-default .navbar-nav li a {
+    color: rgba(255, 255, 255, 1);
+    background-color: #373940;
+}
+
+.navbar-default .navbar-nav li a.activelink {
+
+    color: rgba(255, 255, 255, 1);
+    background-color: #18bc9c;
+
+}
+
+
+.navbar-default .navbar-nav  li  a:hover,
+.navbar-default .navbar-nav  li  a:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(24, 188, 156, 1);
+}
+
+
+
+
+.navbar-default .navbar-toggle {
+    border-color: #18bc9c;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #18bc9c;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar,
+.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: white;
+}
+
+section {
+    scroll-snap-type: proximity;
+    scroll-snap-coordinate: 0% 50%;
+
+    scroll-snap-destination: 0% 0%;
+}
+
+.alert-success {
+    color: #ffffff;
+    background-color: #18bc9c;
+    border-color: #18bc9c;
+}
+
+#video.container{
+    padding-top: 70px;
+}
+
+a {
+    color: #373940;
+    text-decoration: none;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    padding-top: 10px;
+    width: 100px;
+    height: 40px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+
+}
+.placepicker-map {
+    width: 100%;
+    height: 300px;
+}
+
+.another-map-class {
+    width: 100%;
+    height: 300px;
+}
+
+.pac-container {
+    border-radius: 5px;
+}

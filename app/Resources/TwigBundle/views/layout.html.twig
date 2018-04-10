@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{% block title %} Baran! {% endblock %}</title>
+
+
+    {% block header %}
+
+    <script src="{{ asset('js/jquery-1.10.2.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrapValidator.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrapValidator.js') }}"></script>
+
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
+
+    <![endif]-->
+
+</head>
+<body>
+<hr>
+
+<nav class="navbar  navbar-default navbar-fixed-top ">
+
+    <div class="container">
+
+        <div class="navbar-header page-scroll">
+
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+
+            <div class="navbar-brand">
+
+                Baran Saleh
+
+            </div>
+        </div>
+
+        <div class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+
+
+
+                {% if is_granted('ROLE_USER') %}
+                <li id="submenu" ><a href="{{ path('security_logout') }}"  > <span class="glyphicon glyphicon-lock"> </span> Logout </a></li>
+                {% else %}
+                <li id="submenu" ><a href="{{ path('login_page') }}"  > <span class="glyphicon glyphicon-lock"> </span> Login </a></li>
+
+                {% endif %}
+
+
+
+
+                {% if is_granted('ROLE_USER') %}
+
+                {% else %}
+
+                <li id="submenu" ><a href="{{ path('register_page') }}" > <span class="glyphicon glyphicon-user"> </span> Register</a></li>
+                {% endif %}
+
+            </ul>
+
+
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="{{ path('home_page') }}#Aboutme" class="mainmenue"> <span class="glyphicon glyphicon-king"> </span> ABOUT </a></li>
+                <li><a href="{{ path('home_page') }}#myskills" class="mainmenue"> <span class="glyphicon glyphicon-stats"> </span> MY SKILLS </a></li>
+                <li><a href="{{ path('home_page') }}#services" class="mainmenue"> <span class="glyphicon glyphicon-screenshot"> </span> WE CODE KIDS </a></li>
+                <li><a href="{{ path('home_page') }}#contact" class="mainmenue"> <span class="glyphicon glyphicon-envelope"> </span> CONTACT </a></li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+</nav>
+
+{% endblock %}
+
+{% block body %}
+
+
+
+{% endblock %}
+
+{% block footer %}
+
+<div id='footer' class="navbar navbar-default navbar-fixed-bottom">
+
+    <div class="container" style="padding-top: 15px;">
+
+        <a href="#" id="copy-right" class="navbar-text pull-left">BARAN SALEH <span class="glyphicon glyphicon-copyright-mark"> </span>  2017</a>
+
+        <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="E-mail">
+            </div>
+            <button type="submit" class="btn btn-danger">Subscribe</button>
+        </form>
+
+    </div>
+
+</div>
+
+<script src="https://use.fontawesome.com/4829c7485b.js"></script>
+
+
+<script src="{{ asset('js/custom.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: boran
+    database_user: root
+    database_password: root
+    mailer_transport: gmail
+    mailer_host: smtp.gmail.com
+    mailer_user: boran.alsaleh@gmail.com
+    mailer_password: Germany@0595101094
+    twitter_identifier: b6EJDmeSJO1vlK9vCUiMgKHof
+    twitter_secret: KPc7kQaBIJRWa4usvLFupvg4abnsuhD6QFdpT9StGiwX8l8c7l
+    twitter_callback_uri: 'http://localhost:8000/twitterlogin/'
+    secret: Boran1987
